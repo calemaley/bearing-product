@@ -33,44 +33,48 @@ const SearchForm = () => {
   };
 
   return (
-    <div className="min-h-screen py-12 px-4">
-      {/* Header */}
-      <div className="max-w-7xl mx-auto mb-12">
-        <div className="text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 mb-6 shadow-lg">
-            <span className="text-2xl">⚙️</span>
+    <div className="min-h-screen bg-white">
+      {/* Header Hero Section */}
+      <div className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 pt-16 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white bg-opacity-20 backdrop-blur-md mb-8 border border-white border-opacity-30 shadow-2xl">
+            <span className="text-4xl">⚙️</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+          <h1 className="text-5xl md:text-6xl font-black text-white mb-4 tracking-tight">
             Bearing Specification
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Generate professional bearing and accessories specifications with ease
+          <p className="text-xl text-blue-50 max-w-2xl mx-auto font-light leading-relaxed">
+            Generate professional bearing and accessories specifications with ease. Streamlined tools for industrial excellence.
           </p>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto">
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Form Card */}
+        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-blue-100">
           {/* Form Section */}
-          <div className="p-8 md:p-12">
+          <div className="p-8 sm:p-12">
             {/* Bearing Details Section */}
-            <section className="mb-10">
-              <div className="flex items-center mb-6">
-                <div className="w-1 h-6 bg-gradient-to-b from-blue-500 to-blue-600 rounded mr-3"></div>
-                <h2 className="text-2xl font-bold text-gray-900">Bearing Details</h2>
+            <section className="mb-12">
+              <div className="mb-10">
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="w-1.5 h-8 bg-gradient-to-b from-blue-600 to-blue-400 rounded-full"></div>
+                  <h2 className="text-3xl font-bold text-gray-900">Bearing Details</h2>
+                </div>
+                <p className="text-gray-500 ml-8 text-sm font-medium">Configure your bearing specifications below</p>
               </div>
-              
-              <div className="grid md:grid-cols-3 gap-6">
+
+              <div className="grid md:grid-cols-3 gap-6 mb-6">
                 {/* Bearing Type */}
                 <div className="flex flex-col">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">
                     Bearing Type
                   </label>
                   <select
                     value={bearingType}
                     onChange={(e) => setBearingType(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    className="w-full px-5 py-3.5 border-2 border-blue-100 rounded-xl bg-white text-gray-900 font-medium focus:outline-none focus:ring-0 focus:border-blue-500 transition-all hover:border-blue-200"
                   >
                     <option>Deep Groove Ball Bearing</option>
                     <option>Angular Contact Ball Bearing</option>
@@ -81,13 +85,13 @@ const SearchForm = () => {
 
                 {/* Sub-Type */}
                 <div className="flex flex-col">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">
                     Bearing Sub-Type
                   </label>
                   <select
                     value={subType}
                     onChange={(e) => setSubType(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    className="w-full px-5 py-3.5 border-2 border-blue-100 rounded-xl bg-white text-gray-900 font-medium focus:outline-none focus:ring-0 focus:border-blue-500 transition-all hover:border-blue-200"
                   >
                     <option>6000 Series</option>
                     <option>6200 Series</option>
@@ -98,7 +102,7 @@ const SearchForm = () => {
 
                 {/* Bearing Number */}
                 <div className="flex flex-col">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">
                     Bearing Number / Code
                   </label>
                   <input
@@ -106,21 +110,21 @@ const SearchForm = () => {
                     value={bearingNumber}
                     onChange={(e) => setBearingNumber(e.target.value)}
                     placeholder="e.g., NU210"
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-900 font-medium placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    className="w-full px-5 py-3.5 border-2 border-blue-100 rounded-xl bg-white text-gray-900 font-medium placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-blue-500 transition-all hover:border-blue-200"
                   />
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-6 mt-6">
+              <div className="grid md:grid-cols-3 gap-6">
                 {/* Seals/Shields */}
                 <div className="flex flex-col">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">
                     Seals / Shields
                   </label>
                   <select
                     value={seal}
                     onChange={(e) => setSeal(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    className="w-full px-5 py-3.5 border-2 border-blue-100 rounded-xl bg-white text-gray-900 font-medium focus:outline-none focus:ring-0 focus:border-blue-500 transition-all hover:border-blue-200"
                   >
                     <option>OPEN (Default)</option>
                     <option>ZZ (Metal Shields)</option>
@@ -131,7 +135,7 @@ const SearchForm = () => {
 
                 {/* Other Suffixes */}
                 <div className="flex flex-col">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">
                     Other Suffixes
                   </label>
                   <input
@@ -139,13 +143,13 @@ const SearchForm = () => {
                     value={suffixes}
                     onChange={(e) => setSuffixes(e.target.value)}
                     placeholder="e.g., TN9, P6"
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-900 font-medium placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    className="w-full px-5 py-3.5 border-2 border-blue-100 rounded-xl bg-white text-gray-900 font-medium placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-blue-500 transition-all hover:border-blue-200"
                   />
                 </div>
 
                 {/* C3 Checkbox */}
                 <div className="flex flex-col justify-end">
-                  <label className="flex items-center gap-3 px-4 py-3 border border-gray-200 rounded-lg bg-white cursor-pointer hover:bg-blue-50 transition-colors h-full">
+                  <label className="flex items-center gap-3 px-5 py-3.5 border-2 border-blue-100 rounded-xl bg-white cursor-pointer hover:bg-blue-50 transition-all hover:border-blue-300 h-full">
                     <input
                       type="checkbox"
                       checked={hasC3}
@@ -158,7 +162,7 @@ const SearchForm = () => {
               </div>
 
               <div className="mt-6">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <label className="block text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">
                   Make / Application (Optional)
                 </label>
                 <input
@@ -166,23 +170,23 @@ const SearchForm = () => {
                   value={make}
                   onChange={(e) => setMake(e.target.value)}
                   placeholder="e.g., Toyota, SKF, Front Wheel Hub"
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-900 font-medium placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  className="w-full px-5 py-3.5 border-2 border-blue-100 rounded-xl bg-white text-gray-900 font-medium placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-blue-500 transition-all hover:border-blue-200"
                 />
               </div>
             </section>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap justify-center gap-4 pt-6 border-t border-gray-100">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-8 border-t border-gray-200">
               <button
                 onClick={handleGenerate}
-                className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-200 transform hover:scale-105 active:scale-95"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold rounded-xl shadow-xl hover:shadow-2xl hover:from-blue-700 hover:to-blue-600 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-lg"
               >
                 <span>🔍</span>
                 Generate Specification
               </button>
               <button
                 onClick={handleReset}
-                className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-gray-200 text-gray-700 font-semibold rounded-lg shadow-md hover:shadow-lg hover:bg-gray-300 transition-all duration-200 transform hover:scale-105 active:scale-95"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gray-100 text-gray-700 font-bold rounded-xl shadow-md hover:shadow-lg hover:bg-gray-200 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-lg border border-gray-200"
               >
                 <span>♻️</span>
                 Reset
@@ -192,37 +196,40 @@ const SearchForm = () => {
 
           {/* Output Section */}
           {generatedName && (
-            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border-t border-gray-100 p-8 md:p-12">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-25 border-t-2 border-blue-100 p-8 sm:p-12">
               <div className="max-w-4xl mx-auto">
-                <div className="flex items-center mb-6">
-                  <div className="w-1 h-6 bg-gradient-to-b from-emerald-500 to-teal-600 rounded mr-3"></div>
-                  <h3 className="text-2xl font-bold text-gray-900">Generated Specification</h3>
+                <div className="mb-8">
+                  <div className="flex items-center gap-4 mb-2">
+                    <div className="w-1.5 h-8 bg-gradient-to-b from-blue-600 to-blue-400 rounded-full"></div>
+                    <h3 className="text-3xl font-bold text-gray-900">Generated Specification</h3>
+                  </div>
+                  <p className="text-gray-500 ml-8 text-sm font-medium">Your complete bearing specification details</p>
                 </div>
 
-                <div className="space-y-6">
+                <div className="space-y-5">
                   {/* Generated Name */}
-                  <div className="bg-white rounded-lg p-6 border border-emerald-200">
-                    <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wide mb-2">
-                      Specification
+                  <div className="bg-white rounded-2xl p-6 sm:p-8 border-2 border-blue-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">
+                      📋 Specification
                     </p>
-                    <p className="text-lg font-bold text-gray-900 break-words">{generatedName}</p>
+                    <p className="text-lg sm:text-xl font-bold text-gray-900 break-words leading-relaxed">{generatedName}</p>
                   </div>
 
                   {/* Full Description */}
-                  <div className="bg-white rounded-lg p-6 border border-teal-200">
-                    <p className="text-sm font-semibold text-teal-600 uppercase tracking-wide mb-2">
-                      Full Description
+                  <div className="bg-white rounded-2xl p-6 sm:p-8 border-2 border-blue-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">
+                      📝 Full Description
                     </p>
-                    <p className="text-gray-700 leading-relaxed break-words">{fullDescription}</p>
+                    <p className="text-gray-700 leading-relaxed break-words text-base">{fullDescription}</p>
                   </div>
 
                   {/* Make / Application */}
                   {make && (
-                    <div className="bg-white rounded-lg p-6 border border-cyan-200">
-                      <p className="text-sm font-semibold text-cyan-600 uppercase tracking-wide mb-2">
-                        Make / Application
+                    <div className="bg-white rounded-2xl p-6 sm:p-8 border-2 border-blue-200 shadow-lg hover:shadow-xl transition-shadow">
+                      <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">
+                        🏢 Make / Application
                       </p>
-                      <p className="text-gray-700">{make}</p>
+                      <p className="text-gray-700 text-base font-medium">{make}</p>
                     </div>
                   )}
                 </div>
@@ -233,8 +240,10 @@ const SearchForm = () => {
       </div>
 
       {/* Footer */}
-      <div className="max-w-7xl mx-auto mt-12 text-center text-gray-600 text-sm">
-        <p>Professional bearing specifications for industrial applications</p>
+      <div className="bg-gradient-to-r from-blue-50 to-blue-25 border-t border-blue-100 mt-16 py-10 px-4">
+        <div className="max-w-5xl mx-auto text-center">
+          <p className="text-gray-600 font-medium">Professional bearing specifications for industrial applications</p>
+        </div>
       </div>
     </div>
   );
