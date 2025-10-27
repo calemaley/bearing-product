@@ -33,9 +33,9 @@ const SearchForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Header Hero Section */}
-      <div className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 pt-16 pb-20 px-4 sm:px-6 lg:px-8">
+      <div className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 pt-16 pb-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white bg-opacity-20 backdrop-blur-md mb-8 border border-white border-opacity-30 shadow-2xl">
             <span className="text-4xl">⚙️</span>
@@ -50,31 +50,31 @@ const SearchForm = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Form Card */}
         <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-blue-100">
           {/* Form Section */}
-          <div className="p-8 sm:p-12">
+          <div className="p-8 sm:p-16">
             {/* Bearing Details Section */}
-            <section className="mb-12">
-              <div className="mb-10">
-                <div className="flex items-center gap-4 mb-2">
+            <section className="mb-16">
+              <div className="mb-16">
+                <div className="flex items-center gap-4 mb-3">
                   <div className="w-1.5 h-8 bg-gradient-to-b from-blue-600 to-blue-400 rounded-full"></div>
                   <h2 className="text-3xl font-bold text-gray-900">Bearing Details</h2>
                 </div>
                 <p className="text-gray-500 ml-8 text-sm font-medium">Configure your bearing specifications below</p>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-6 mb-6">
+              <div className="grid md:grid-cols-3 gap-8 mb-10">
                 {/* Bearing Type */}
                 <div className="flex flex-col">
-                  <label className="block text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">
+                  <label className="block text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wide">
                     Bearing Type
                   </label>
                   <select
                     value={bearingType}
                     onChange={(e) => setBearingType(e.target.value)}
-                    className="w-full px-5 py-3.5 border-2 border-blue-100 rounded-xl bg-white text-gray-900 font-medium focus:outline-none focus:ring-0 focus:border-blue-500 transition-all hover:border-blue-200"
+                    className="w-full px-5 py-4 border-2 border-gray-200 rounded-2xl bg-white text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all hover:border-gray-300"
                   >
                     <option>Deep Groove Ball Bearing</option>
                     <option>Angular Contact Ball Bearing</option>
@@ -85,13 +85,13 @@ const SearchForm = () => {
 
                 {/* Sub-Type */}
                 <div className="flex flex-col">
-                  <label className="block text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">
+                  <label className="block text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wide">
                     Bearing Sub-Type
                   </label>
                   <select
                     value={subType}
                     onChange={(e) => setSubType(e.target.value)}
-                    className="w-full px-5 py-3.5 border-2 border-blue-100 rounded-xl bg-white text-gray-900 font-medium focus:outline-none focus:ring-0 focus:border-blue-500 transition-all hover:border-blue-200"
+                    className="w-full px-5 py-4 border-2 border-gray-200 rounded-2xl bg-white text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all hover:border-gray-300"
                   >
                     <option>6000 Series</option>
                     <option>6200 Series</option>
@@ -102,7 +102,7 @@ const SearchForm = () => {
 
                 {/* Bearing Number */}
                 <div className="flex flex-col">
-                  <label className="block text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">
+                  <label className="block text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wide">
                     Bearing Number / Code
                   </label>
                   <input
@@ -110,21 +110,21 @@ const SearchForm = () => {
                     value={bearingNumber}
                     onChange={(e) => setBearingNumber(e.target.value)}
                     placeholder="e.g., NU210"
-                    className="w-full px-5 py-3.5 border-2 border-blue-100 rounded-xl bg-white text-gray-900 font-medium placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-blue-500 transition-all hover:border-blue-200"
+                    className="w-full px-5 py-4 border-2 border-gray-200 rounded-2xl bg-white text-gray-900 font-medium placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all hover:border-gray-300"
                   />
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-3 gap-8 mb-10">
                 {/* Seals/Shields */}
                 <div className="flex flex-col">
-                  <label className="block text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">
+                  <label className="block text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wide">
                     Seals / Shields
                   </label>
                   <select
                     value={seal}
                     onChange={(e) => setSeal(e.target.value)}
-                    className="w-full px-5 py-3.5 border-2 border-blue-100 rounded-xl bg-white text-gray-900 font-medium focus:outline-none focus:ring-0 focus:border-blue-500 transition-all hover:border-blue-200"
+                    className="w-full px-5 py-4 border-2 border-gray-200 rounded-2xl bg-white text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all hover:border-gray-300"
                   >
                     <option>OPEN (Default)</option>
                     <option>ZZ (Metal Shields)</option>
@@ -135,7 +135,7 @@ const SearchForm = () => {
 
                 {/* Other Suffixes */}
                 <div className="flex flex-col">
-                  <label className="block text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">
+                  <label className="block text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wide">
                     Other Suffixes
                   </label>
                   <input
@@ -143,13 +143,13 @@ const SearchForm = () => {
                     value={suffixes}
                     onChange={(e) => setSuffixes(e.target.value)}
                     placeholder="e.g., TN9, P6"
-                    className="w-full px-5 py-3.5 border-2 border-blue-100 rounded-xl bg-white text-gray-900 font-medium placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-blue-500 transition-all hover:border-blue-200"
+                    className="w-full px-5 py-4 border-2 border-gray-200 rounded-2xl bg-white text-gray-900 font-medium placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all hover:border-gray-300"
                   />
                 </div>
 
                 {/* C3 Checkbox */}
                 <div className="flex flex-col justify-end">
-                  <label className="flex items-center gap-3 px-5 py-3.5 border-2 border-blue-100 rounded-xl bg-white cursor-pointer hover:bg-blue-50 transition-all hover:border-blue-300 h-full">
+                  <label className="flex items-center gap-3 px-5 py-4 border-2 border-gray-200 rounded-2xl bg-white cursor-pointer hover:bg-blue-50 transition-all hover:border-blue-300 h-full">
                     <input
                       type="checkbox"
                       checked={hasC3}
@@ -161,8 +161,8 @@ const SearchForm = () => {
                 </div>
               </div>
 
-              <div className="mt-6">
-                <label className="block text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wide">
                   Make / Application (Optional)
                 </label>
                 <input
@@ -170,23 +170,23 @@ const SearchForm = () => {
                   value={make}
                   onChange={(e) => setMake(e.target.value)}
                   placeholder="e.g., Toyota, SKF, Front Wheel Hub"
-                  className="w-full px-5 py-3.5 border-2 border-blue-100 rounded-xl bg-white text-gray-900 font-medium placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-blue-500 transition-all hover:border-blue-200"
+                  className="w-full px-5 py-4 border-2 border-gray-200 rounded-2xl bg-white text-gray-900 font-medium placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all hover:border-gray-300"
                 />
               </div>
             </section>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-8 border-t border-gray-200">
+            <div className="flex flex-col sm:flex-row justify-center gap-6 pt-12 border-t border-gray-200">
               <button
                 onClick={handleGenerate}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold rounded-xl shadow-xl hover:shadow-2xl hover:from-blue-700 hover:to-blue-600 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-lg"
+                className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:from-blue-700 hover:to-blue-600 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-lg"
               >
                 <span>🔍</span>
                 Generate Specification
               </button>
               <button
                 onClick={handleReset}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gray-100 text-gray-700 font-bold rounded-xl shadow-md hover:shadow-lg hover:bg-gray-200 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-lg border border-gray-200"
+                className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-lg"
               >
                 <span>♻️</span>
                 Reset
