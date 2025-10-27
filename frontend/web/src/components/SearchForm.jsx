@@ -196,20 +196,20 @@ const SearchForm = () => {
 
           {/* Output Section */}
           {generatedName && (
-            <div className="bg-gradient-to-br from-blue-50 to-blue-25 border-t-2 border-blue-100 p-8 sm:p-12">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-25 border-t-2 border-blue-100 p-8 sm:p-16">
               <div className="max-w-4xl mx-auto">
-                <div className="mb-8">
-                  <div className="flex items-center gap-4 mb-2">
+                <div className="mb-12">
+                  <div className="flex items-center gap-4 mb-3">
                     <div className="w-1.5 h-8 bg-gradient-to-b from-blue-600 to-blue-400 rounded-full"></div>
                     <h3 className="text-3xl font-bold text-gray-900">Generated Specification</h3>
                   </div>
                   <p className="text-gray-500 ml-8 text-sm font-medium">Your complete bearing specification details</p>
                 </div>
 
-                <div className="space-y-5">
+                <div className="space-y-8">
                   {/* Generated Name */}
                   <div className="bg-white rounded-2xl p-6 sm:p-8 border-2 border-blue-200 shadow-lg hover:shadow-xl transition-shadow">
-                    <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">
+                    <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-4">
                       📋 Specification
                     </p>
                     <p className="text-lg sm:text-xl font-bold text-gray-900 break-words leading-relaxed">{generatedName}</p>
@@ -217,7 +217,7 @@ const SearchForm = () => {
 
                   {/* Full Description */}
                   <div className="bg-white rounded-2xl p-6 sm:p-8 border-2 border-blue-200 shadow-lg hover:shadow-xl transition-shadow">
-                    <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">
+                    <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-4">
                       📝 Full Description
                     </p>
                     <p className="text-gray-700 leading-relaxed break-words text-base">{fullDescription}</p>
@@ -226,7 +226,7 @@ const SearchForm = () => {
                   {/* Make / Application */}
                   {make && (
                     <div className="bg-white rounded-2xl p-6 sm:p-8 border-2 border-blue-200 shadow-lg hover:shadow-xl transition-shadow">
-                      <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">
+                      <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-4">
                         🏢 Make / Application
                       </p>
                       <p className="text-gray-700 text-base font-medium">{make}</p>
