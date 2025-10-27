@@ -240,7 +240,7 @@ const SearchForm = () => {
       </div>
 
       {/* Footer */}
-      <div className="bg-gradient-to-r from-blue-50 to-blue-25 border-t border-blue-100 mt-16 py-10 px-4">
+      <div className="bg-gradient-to-r from-blue-50 to-blue-25 border-t border-blue-100 mt-20 py-12 px-4">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-gray-600 font-medium">Professional bearing specifications for industrial applications</p>
         </div>
