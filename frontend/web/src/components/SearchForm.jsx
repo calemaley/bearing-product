@@ -33,141 +33,208 @@ const SearchForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 py-10 px-4">
-      <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl border border-blue-200 p-8">
-        {/* Header */}
-        <h1 className="text-3xl font-extrabold text-center text-blue-800 mb-8">
-          ⚙️ Bearing & Accessories Specification
-        </h1>
-
-        {/* Bearing Details */}
-        <section className="mb-8">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Bearing Details</h2>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Bearing Type */}
-            <div className="flex flex-col">
-              <label className="font-medium text-gray-700 mb-1">Bearing Type:</label>
-              <select
-                value={bearingType}
-                onChange={(e) => setBearingType(e.target.value)}
-                className="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-400"
-              >
-                <option>Deep Groove Ball Bearing</option>
-                <option>Angular Contact Ball Bearing</option>
-                <option>Tapered Roller Bearing</option>
-                <option>Thrust Ball Bearing</option>
-              </select>
-            </div>
-
-            {/* Sub-Type */}
-            <div className="flex flex-col">
-              <label className="font-medium text-gray-700 mb-1">Bearing Sub-Type:</label>
-              <select
-                value={subType}
-                onChange={(e) => setSubType(e.target.value)}
-                className="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-400"
-              >
-                <option>6000 Series</option>
-                <option>6200 Series</option>
-                <option>6300 Series</option>
-                <option>6400 Series</option>
-              </select>
-            </div>
-
-            {/* Bearing Number */}
-            <div className="flex flex-col">
-              <label className="font-medium text-gray-700 mb-1">Bearing Number / Code:</label>
-              <input
-                type="text"
-                value={bearingNumber}
-                onChange={(e) => setBearingNumber(e.target.value)}
-                placeholder="e.g., NU210"
-                className="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-400"
-              />
-            </div>
+    <div className="min-h-screen py-12 px-4">
+      {/* Header */}
+      <div className="max-w-7xl mx-auto mb-12">
+        <div className="text-center">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 mb-6 shadow-lg">
+            <span className="text-2xl">⚙️</span>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-6 mt-6">
-            {/* Seals/Shields */}
-            <div className="flex flex-col">
-              <label className="font-medium text-gray-700 mb-1">Seals/Shields:</label>
-              <select
-                value={seal}
-                onChange={(e) => setSeal(e.target.value)}
-                className="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-400"
-              >
-                <option>OPEN (Default)</option>
-                <option>ZZ (Metal Shields)</option>
-                <option>2RS (Rubber Seals)</option>
-                <option>DU (Dustproof Type)</option>
-              </select>
-            </div>
-
-            {/* Other Suffixes */}
-            <div className="flex flex-col">
-              <label className="font-medium text-gray-700 mb-1">Other Suffixes:</label>
-              <input
-                type="text"
-                value={suffixes}
-                onChange={(e) => setSuffixes(e.target.value)}
-                placeholder="e.g., TN9, P6"
-                className="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-400"
-              />
-              <label className="flex items-center gap-2 mt-2 text-gray-700">
-                <input
-                  type="checkbox"
-                  checked={hasC3}
-                  onChange={() => setHasC3(!hasC3)}
-                  className="h-4 w-4 text-blue-500"
-                />
-                <span>C3</span>
-              </label>
-            </div>
-
-            {/* Make / Application */}
-            <div className="flex flex-col">
-              <label className="font-medium text-gray-700 mb-1">Make / Application (Optional):</label>
-              <input
-                type="text"
-                value={make}
-                onChange={(e) => setMake(e.target.value)}
-                placeholder="e.g., Toyota, SKF, Front Wheel Hub"
-                className="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-400"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-8">
-          <button
-            onClick={handleGenerate}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg shadow-md transition-all"
-          >
-            🔍 Generate Specification
-          </button>
-          <button
-            onClick={handleReset}
-            className="bg-gray-400 hover:bg-gray-500 text-white px-6 py-2 rounded-lg shadow-md transition-all"
-          >
-            ♻️ Reset
-          </button>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+            Bearing Specification
+          </h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Generate professional bearing and accessories specifications with ease
+          </p>
         </div>
+      </div>
 
-        {/* Output Section */}
-        {generatedName && (
-          <div className="bg-gradient-to-r from-green-50 to-green-100 border border-green-300 p-6 rounded-xl shadow-inner">
-            <h3 className="text-lg font-semibold text-green-800 mb-2">🧾 Generated Specification</h3>
-            <p className="text-gray-900 mb-4 font-medium">{generatedName}</p>
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto">
+        <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+          {/* Form Section */}
+          <div className="p-8 md:p-12">
+            {/* Bearing Details Section */}
+            <section className="mb-10">
+              <div className="flex items-center mb-6">
+                <div className="w-1 h-6 bg-gradient-to-b from-blue-500 to-blue-600 rounded mr-3"></div>
+                <h2 className="text-2xl font-bold text-gray-900">Bearing Details</h2>
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-6">
+                {/* Bearing Type */}
+                <div className="flex flex-col">
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Bearing Type
+                  </label>
+                  <select
+                    value={bearingType}
+                    onChange={(e) => setBearingType(e.target.value)}
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  >
+                    <option>Deep Groove Ball Bearing</option>
+                    <option>Angular Contact Ball Bearing</option>
+                    <option>Tapered Roller Bearing</option>
+                    <option>Thrust Ball Bearing</option>
+                  </select>
+                </div>
 
-            <h3 className="text-lg font-semibold text-green-800 mb-2">📄 Full Description</h3>
-            <p className="text-gray-900 mb-4">{fullDescription}</p>
+                {/* Sub-Type */}
+                <div className="flex flex-col">
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Bearing Sub-Type
+                  </label>
+                  <select
+                    value={subType}
+                    onChange={(e) => setSubType(e.target.value)}
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  >
+                    <option>6000 Series</option>
+                    <option>6200 Series</option>
+                    <option>6300 Series</option>
+                    <option>6400 Series</option>
+                  </select>
+                </div>
 
-            <h3 className="text-lg font-semibold text-green-800 mb-2">🏷️ Make / Application</h3>
-            <p className="text-gray-900">{make || "N/A"}</p>
+                {/* Bearing Number */}
+                <div className="flex flex-col">
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Bearing Number / Code
+                  </label>
+                  <input
+                    type="text"
+                    value={bearingNumber}
+                    onChange={(e) => setBearingNumber(e.target.value)}
+                    placeholder="e.g., NU210"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-900 font-medium placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-6 mt-6">
+                {/* Seals/Shields */}
+                <div className="flex flex-col">
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Seals / Shields
+                  </label>
+                  <select
+                    value={seal}
+                    onChange={(e) => setSeal(e.target.value)}
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  >
+                    <option>OPEN (Default)</option>
+                    <option>ZZ (Metal Shields)</option>
+                    <option>2RS (Rubber Seals)</option>
+                    <option>DU (Dustproof Type)</option>
+                  </select>
+                </div>
+
+                {/* Other Suffixes */}
+                <div className="flex flex-col">
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Other Suffixes
+                  </label>
+                  <input
+                    type="text"
+                    value={suffixes}
+                    onChange={(e) => setSuffixes(e.target.value)}
+                    placeholder="e.g., TN9, P6"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-900 font-medium placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  />
+                </div>
+
+                {/* C3 Checkbox */}
+                <div className="flex flex-col justify-end">
+                  <label className="flex items-center gap-3 px-4 py-3 border border-gray-200 rounded-lg bg-white cursor-pointer hover:bg-blue-50 transition-colors h-full">
+                    <input
+                      type="checkbox"
+                      checked={hasC3}
+                      onChange={() => setHasC3(!hasC3)}
+                      className="w-5 h-5 text-blue-600 rounded focus:ring-2 focus:ring-blue-500 cursor-pointer"
+                    />
+                    <span className="text-sm font-semibold text-gray-700">C3 Clearance</span>
+                  </label>
+                </div>
+              </div>
+
+              <div className="mt-6">
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Make / Application (Optional)
+                </label>
+                <input
+                  type="text"
+                  value={make}
+                  onChange={(e) => setMake(e.target.value)}
+                  placeholder="e.g., Toyota, SKF, Front Wheel Hub"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-900 font-medium placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                />
+              </div>
+            </section>
+
+            {/* Action Buttons */}
+            <div className="flex flex-wrap justify-center gap-4 pt-6 border-t border-gray-100">
+              <button
+                onClick={handleGenerate}
+                className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-200 transform hover:scale-105 active:scale-95"
+              >
+                <span>🔍</span>
+                Generate Specification
+              </button>
+              <button
+                onClick={handleReset}
+                className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-gray-200 text-gray-700 font-semibold rounded-lg shadow-md hover:shadow-lg hover:bg-gray-300 transition-all duration-200 transform hover:scale-105 active:scale-95"
+              >
+                <span>♻️</span>
+                Reset
+              </button>
+            </div>
           </div>
-        )}
+
+          {/* Output Section */}
+          {generatedName && (
+            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border-t border-gray-100 p-8 md:p-12">
+              <div className="max-w-4xl mx-auto">
+                <div className="flex items-center mb-6">
+                  <div className="w-1 h-6 bg-gradient-to-b from-emerald-500 to-teal-600 rounded mr-3"></div>
+                  <h3 className="text-2xl font-bold text-gray-900">Generated Specification</h3>
+                </div>
+
+                <div className="space-y-6">
+                  {/* Generated Name */}
+                  <div className="bg-white rounded-lg p-6 border border-emerald-200">
+                    <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wide mb-2">
+                      Specification
+                    </p>
+                    <p className="text-lg font-bold text-gray-900 break-words">{generatedName}</p>
+                  </div>
+
+                  {/* Full Description */}
+                  <div className="bg-white rounded-lg p-6 border border-teal-200">
+                    <p className="text-sm font-semibold text-teal-600 uppercase tracking-wide mb-2">
+                      Full Description
+                    </p>
+                    <p className="text-gray-700 leading-relaxed break-words">{fullDescription}</p>
+                  </div>
+
+                  {/* Make / Application */}
+                  {make && (
+                    <div className="bg-white rounded-lg p-6 border border-cyan-200">
+                      <p className="text-sm font-semibold text-cyan-600 uppercase tracking-wide mb-2">
+                        Make / Application
+                      </p>
+                      <p className="text-gray-700">{make}</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="max-w-7xl mx-auto mt-12 text-center text-gray-600 text-sm">
+        <p>Professional bearing specifications for industrial applications</p>
       </div>
     </div>
   );
